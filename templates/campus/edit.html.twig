@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer Campus{% endblock %}
+
+{% block body %}
+    <h1>Editer Campus</h1>
+
+    {{ include('campus/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('campus_index') }}">retour à la list</a>
+
+    {{ include('campus/_delete_form.html.twig') }}
+{% endblock %}
