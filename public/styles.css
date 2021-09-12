@@ -31,3 +31,12 @@ body {
     height: 10%;
     font-weight: bold;
 }
+.form3 {
+    margin-left: 0;
+    display: flex;
+    align-content: center;
+}
+.form3 div {
+    width: 200px;
+    font-weight: bold;
+}
