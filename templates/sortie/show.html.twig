@@ -8,10 +8,6 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ sortie.id }}</td>
-            </tr>
-            <tr>
                 <th>Nom</th>
                 <td>{{ sortie.nom }}</td>
             </tr>
@@ -34,6 +30,30 @@
             <tr>
                 <th>Infos_sortie</th>
                 <td>{{ sortie.infosSortie }}</td>
+            </tr>
+            <tr>
+                <th>Campus</th>
+                <td>{{ sortie.campus.nom }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ sortie.lieu.nom }}</td>
+            </tr>
+            <tr>
+                <th>Rue</th>
+                <td>{{ sortie.lieu.rue }}</td>
+            </tr>
+            <tr>
+                <th>Code postal</th>
+                <td>{{ sortie.ville.cp }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ sortie.lieu.latitude }}</td>
+            </tr>
+            <tr>
+                <th>longitude</th>
+                <td>{{ sortie.lieu.longitude }}</td>
             </tr>
         </tbody>
     </table>
