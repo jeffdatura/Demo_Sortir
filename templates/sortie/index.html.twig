@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sortie index{% endblock %}
+{% block title %}Sortie{% endblock %}
 
 {% block body %}
-    <h1>Sortie index</h1>
+    <h1>Sortie</h1>
 
     <table class="table">
         <thead>
@@ -29,8 +29,8 @@
                 <td>{{ sortie.nbInscriptionMax }}</td>
                 <td>{{ sortie.infosSortie }}</td>
                 <td>
-                    <a href="{{ path('sortie_show', {'id': sortie.id}) }}">show</a>
-                    <a href="{{ path('sortie_edit', {'id': sortie.id}) }}">edit</a>
+                    <a href="{{ path('sortie_show', {'id': sortie.id}) }}">voir</a>
+                    <a href="{{ path('sortie_edit', {'id': sortie.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('sortie_new') }}">Create new</a>
+    <a href="{{ path('sortie_new') }}">Créer nouveau</a>
 {% endblock %}
