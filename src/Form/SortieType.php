@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Campus;
 use App\Entity\Etat;
 use App\Entity\Lieu;
 use App\Entity\Sortie;
@@ -27,17 +28,21 @@ class SortieType extends AbstractType
                 'class' => Ville::class,
                 'choice_label' => 'nom'
             ])
-            ->add('etat', EntityType::class, [
-                'label' => 'Etat',
-                'class' => Etat::class,
-                'choice_label' => 'libelle'
-            ])
             ->add('lieu', EntityType::class, [
                 'label' => 'Lieu',
                 'class' => Lieu::class,
                 'choice_label' => 'nom'
             ])
-
+            ->add('etat', EntityType::class, [
+                'label' => 'Etat',
+                'class' => Etat::class,
+                'choice_label' => 'libelle'
+            ])
+            ->add('campus', EntityType::class, [
+                'label' => 'Campus',
+                'class' => Campus::class,
+                'choice_label' => 'nom'
+            ])
         ;
     }
 
