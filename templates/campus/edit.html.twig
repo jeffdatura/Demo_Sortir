@@ -7,7 +7,7 @@
 
     {{ include('campus/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('campus_index') }}">retour à la list</a>
+    <a class="btn btn-primary" href="{{ path('campus_index') }}">retour à la list</a>
 
     {{ include('campus/_delete_form.html.twig') }}
 {% endblock %}

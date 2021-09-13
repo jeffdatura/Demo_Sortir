@@ -19,8 +19,8 @@
                 <td>{{ campus.id }}</td>
                 <td>{{ campus.nom }}</td>
                 <td>
-                    <a href="{{ path('campus_show', {'id': campus.id}) }}">regarder</a>
-                    <a href="{{ path('campus_edit', {'id': campus.id}) }}">editer</a>
+                    <a class="btn btn-primary" href="{{ path('campus_show', {'id': campus.id}) }}">regarder</a>
+                    <a class="btn btn-primary" href="{{ path('campus_edit', {'id': campus.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('campus_new') }}">Créer un campus</a>
+    <a class="btn btn-primary" href="{{ path('campus_new') }}">Créer un campus</a>
 {% endblock %}

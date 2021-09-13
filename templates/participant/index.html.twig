@@ -29,8 +29,8 @@
                 <td><img src="{{ asset('/photos/' ~ participant.photo ) }}" alt="" width="150"></td>
                 <td>{{ participant.campus.nom }}</td>
                 <td>
-                    <a href="{{ path('participant_show', {'id': participant.id}) }}">voir</a>
-                    <a href="{{ path('participant_edit', {'id': participant.id}) }}">editer</a>
+                    <a class="btn btn-primary" href="{{ path('participant_show', {'id': participant.id}) }}">voir</a>
+                    <a class="btn btn-primary" href="{{ path('participant_edit', {'id': participant.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('participant_new') }}">Créer nouveau</a>
+    <a class="btn btn-primary" href="{{ path('participant_new') }}">Créer nouveau</a>
 {% endblock %}

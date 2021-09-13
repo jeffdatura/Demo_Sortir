@@ -21,8 +21,8 @@
                 <td>{{ ville.nom }}</td>
                 <td>{{ ville.cp }}</td>
                 <td>
-                    <a href="{{ path('ville_show', {'id': ville.id}) }}">show</a>
-                    <a href="{{ path('ville_edit', {'id': ville.id}) }}">edit</a>
+                    <a class="btn btn-primary" href="{{ path('ville_show', {'id': ville.id}) }}">show</a>
+                    <a class="btn btn-primary" href="{{ path('ville_edit', {'id': ville.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('ville_new') }}">Créer une nouvelle ville</a>
+    <a class="btn btn-primary" href="{{ path('ville_new') }}">Créer une nouvelle ville</a>
 {% endblock %}

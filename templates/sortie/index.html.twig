@@ -24,13 +24,13 @@
                 <td>{{ sortie.id }}</td>
                 <td>{{ sortie.nom }}</td>
                 <td>{{ sortie.dateHeureDebut ? sortie.dateHeureDebut|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ sortie.duree }}</td>
+                <td>{{ sortie.duree }}<p>minutes</p></td>
                 <td>{{ sortie.dateLimiteInscription ? sortie.dateLimiteInscription|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ sortie.nbInscriptionMax }}</td>
+                <td>{{ sortie.nbInscriptionMax }}<p>participants</p></td>
                 <td>{{ sortie.infosSortie }}</td>
                 <td>
-                    <a href="{{ path('sortie_show', {'id': sortie.id}) }}">voir</a>
-                    <a href="{{ path('sortie_edit', {'id': sortie.id}) }}">editer</a>
+                    <a class="btn btn-primary" href="{{ path('sortie_show', {'id': sortie.id}) }}">voir</a>
+                    <a class="btn btn-primary" href="{{ path('sortie_edit', {'id': sortie.id}) }}">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('sortie_new') }}">Créer nouveau</a>
+    <a class="btn btn-primary" href="{{ path('sortie_new') }}">Créer nouveau</a>
 {% endblock %}

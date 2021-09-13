@@ -7,7 +7,7 @@
 
     {{ include('sortie/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('sortie_index') }}">retour à la list</a>
+    <a class="btn btn-primary" href="{{ path('sortie_index') }}">retour à la list</a>
 
     {{ include('sortie/_delete_form.html.twig') }}
 {% endblock %}
