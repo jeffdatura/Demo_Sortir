@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\CampusRepository;
+use App\Repository\LieuRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CampusRepository::class)
+ * @ORM\Entity(repositoryClass=LieuRepository::class)
  */
-class Campus
+class Lieu
 {
     /**
      * @ORM\Id
@@ -25,18 +25,27 @@ class Campus
     private $nom;
 
     /**
-     * @ORM\OneToMany(targetEntity=Participant::class, mappedBy="campus", orphanRemoval=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $participants;
+    private $rue;
 
     /**
-     * @ORM\OneToMany(targetEntity=Sortie::class, mappedBy="campus", orphanRemoval=true)
+     * @ORM\Column(type="float")
+     */
+    private $latitude;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $longitude;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Sortie::class, mappedBy="lieu", orphanRemoval=true)
      */
     private $sorties;
 
     public function __construct()
     {
-        $this->participants = new ArrayCollection();
         $this->sorties = new ArrayCollection();
     }
 
@@ -57,32 +66,38 @@ class Campus
         return $this;
     }
 
-    /**
-     * @return Collection|Participant[]
-     */
-    public function getParticipants(): Collection
+    public function getRue(): ?string
     {
-        return $this->participants;
+        return $this->rue;
     }
 
-    public function addParticipant(Participant $participant): self
+    public function setRue(string $rue): self
     {
-        if (!$this->participants->contains($participant)) {
-            $this->participants[] = $participant;
-            $participant->setCampus($this);
-        }
+        $this->rue = $rue;
 
         return $this;
     }
 
-    public function removeParticipant(Participant $participant): self
+    public function getLatitude(): ?float
     {
-        if ($this->participants->removeElement($participant)) {
-            // set the owning side to null (unless already changed)
-            if ($participant->getCampus() === $this) {
-                $participant->setCampus(null);
-            }
-        }
+        return $this->latitude;
+    }
+
+    public function setLatitude(float $latitude): self
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?float
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(float $longitude): self
+    {
+        $this->longitude = $longitude;
 
         return $this;
     }
@@ -99,7 +114,7 @@ class Campus
     {
         if (!$this->sorties->contains($sorty)) {
             $this->sorties[] = $sorty;
-            $sorty->setCampus($this);
+            $sorty->setLieu($this);
         }
 
         return $this;
@@ -109,8 +124,8 @@ class Campus
     {
         if ($this->sorties->removeElement($sorty)) {
             // set the owning side to null (unless already changed)
-            if ($sorty->getCampus() === $this) {
-                $sorty->setCampus(null);
+            if ($sorty->getLieu() === $this) {
+                $sorty->setLieu(null);
             }
         }
 
