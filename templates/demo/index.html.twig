@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    {% include 'nav/nav.html.twig' %}
+    <h1>Accueil</h1>
+    <table class="table table-hover table-dark">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Date de la sortie</th>
+            <th>Clôture</th>
+            <th>Inscrits</th>
+            <th>Etat</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sortie in liste %}
+            <tr>
+                <td>{{ sortie.nom }}</td>
+                <td>{{ sortie.dateHeureDebut |date("d-m-Y à H:i") }}</td>
+                <td>{{ sortie.dateLimiteInscription |date("d-m-Y à H:i") }}</td>
+                <td>{{ sortie.nbInscriptionMax }}</td>
+                <td>{{ sortie.etat.libelle }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="{{ asset('logo/3mous.jpg') }}" alt="3mous" width="150">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('demo_liste') }}">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('ville_index') }}">Villes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('campus_index') }}">Campus</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('participant_index') }}">Mon profil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
+            </li>
+        </ul>
+    </div>
+</nav>
